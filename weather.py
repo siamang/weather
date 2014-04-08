@@ -19,7 +19,11 @@ f = urllib2.urlopen(http)
 
 json_string = f.read()
 parsed = json.loads(json_string)
-location = parsed['location']['city']
-temperature = parsed['current_observation']['temp_f']
-print "Current Temperature in %s is %s" % (location, temperature)
+try:
+  location = parsed['location']['city']
+  temperature = parsed['current_observation']['temp_f']
+  print "Current Temperature in %s is %s" % (location, temperature)
+except KeyError:
+  print "City not found"
+
 f.close()
