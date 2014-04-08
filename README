@@ -1,3 +1,5 @@
 weather.py
 
 Takes city and state and prints temperature
+
+Add wunderground.com API key in a separate key.txt
